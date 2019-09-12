@@ -1,5 +1,7 @@
 package com.timbuchalka;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 public class VariableMutation {
     public static void main(String[] args) {
         int a = 3;
@@ -31,6 +33,9 @@ public class VariableMutation {
         int f2 = 345;
         // tell if f1 is bigger than f2 (print as a boolean)
         System.out.println((boolean)(f1>f2));
+        boolean f1IsBigger;
+
+        f1IsBigger=(f1>f2)?true:false;
 
         int g1 = 350;
         int g2 = 200;
