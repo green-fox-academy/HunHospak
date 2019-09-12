@@ -51,8 +51,12 @@ public class VariableMutation {
         // tell if i1 is higher than i2 squared and smaller than i2 cubed (print as a boolean)
         if (Math.pow(i2,2)<i1 && i1<Math.pow(i2,3));
 
-        int j = 1521;
+        int j = 15;
         // tell if j is dividable by 3 or 5 (print as a boolean)
+        boolean isboolean;
+        if (j%5==0 || j%3==0) {
+            isboolean=true;
+        }
 
     }
 }
