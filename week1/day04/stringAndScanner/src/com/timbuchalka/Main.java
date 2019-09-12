@@ -14,6 +14,10 @@ public class Main {
 
         System.out.println("Your favourite number is: " + favouriteNum);;
 
+        if (favouriteNum > 10) {
+            System.out.println("Too much");
+        }
+
 
     }
 }
