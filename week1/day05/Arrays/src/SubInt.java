@@ -11,9 +11,23 @@ public class SubInt {
         //  should print: `[0, 1, 4]`
         //System.out.println(subInt(9, new int[] {1, 11, 34, 52, 61}));
         //  should print: '[]'
+
+        int [] myArray = subArr(1,new int[] {2,2,3,2,62});
+        for (int i = 0; i <myArray.length ; i++) {
+            System.out.println(myArray[i]);
+        }
+
+
+
     }
-    public static String subInt (int input) {
-        int [] myArray = input
+    public static int [] subArr (int input, int [] arr) {
+        int [] sum = new int [arr.length];
+        for (int i=0; i<arr.length; i++) {
+            if (input==arr[i]) {
+                sum[i] = i;
+            }
+        }
+        return sum;
     }
 
 
