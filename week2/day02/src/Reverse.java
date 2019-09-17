@@ -8,4 +8,12 @@ public class Reverse {
 
         System.out.println(reverse(reversed));
     }
+
+    public static String reverse(String input) {
+        String szoveg = "";
+        for (int i = input.length()-1; i >=0 ; i--) {
+        szoveg += input.charAt(i);
+        }
+        return szoveg;
+    }
 }
