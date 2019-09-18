@@ -17,12 +17,27 @@ public class StarryNight {
         int x;
         int y;
         int j;
-        for (int i = 0; i < 15001; i++) {
+        for (int i = 0; i < 10001; i++) {
             k = (int)(Math.random()*255);
             x = (int)(Math.random()*1920);
             y = (int)(Math.random()*1080);
             j = (int)(Math.random()*3);
             graphics.setColor(new Color(k,k,k));
+            graphics.fillRect(x,y,j,j);
+        }
+
+        for (int i = 0; i < 2001; i++) {
+            x = (int)(Math.random()*1920);
+            y = (int)(Math.random()*1080);
+            j = (int)(Math.random()*3);
+            graphics.setColor(new Color(30,144,255));
+            graphics.fillRect(x,y,j,j);
+        }
+        for (int i = 0; i < 2001; i++) {
+            x = (int)(Math.random()*1920);
+            y = (int)(Math.random()*1080);
+            j = (int)(Math.random()*3);
+            graphics.setColor(new Color(252,226,5));
             graphics.fillRect(x,y,j,j);
         }
 

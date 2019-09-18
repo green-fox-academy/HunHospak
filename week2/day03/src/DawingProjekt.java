@@ -1,27 +1,36 @@
 import javax.swing.*;
 
 import java.awt.*;
+import java.awt.geom.CubicCurve2D;
+import java.awt.geom.QuadCurve2D;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PurpleSteps3d {
+public class DawingProjekt {
     public static void mainDraw(Graphics graphics) {
-        // Reproduce this:
-        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/assets/r4.png]
-        graphics.setColor(new Color(155,30,10));
-        int x=0;
-        int y=0;
-        int k=0;
+        int x = 30;
+        int y = 0;
+        int s = 320;
+        int r = 30;
+        graphics.setColor(new Color(67,189,21));
+        for (double i = 0; i < 21; i++) {
+            graphics.drawLine(x,y,s,r);
+            x+=25;
+            y+=0;
+            r+=25;
 
-        for (int i = 0; i < 10; i++) {
-            graphics.fillRect(x,y,k,k);
-            x+=k;
-            y+=k;
-            k+=5;
         }
-
-
-
+        graphics.setColor(new Color(178,57,196));
+        x=0;
+        y=30;
+        s=30;
+        r=320;
+        for (double i = 0; i < 21; i++) {
+            graphics.drawLine(x, y, s, r);
+            x += 0;
+            y += 25;
+            s += 25;
+        }
     }
 
     // Don't touch the code below

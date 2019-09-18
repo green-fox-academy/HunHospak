@@ -23,6 +23,8 @@ public class FourRectangles {
             k*=2;
 
 
+
+
         }
 
 

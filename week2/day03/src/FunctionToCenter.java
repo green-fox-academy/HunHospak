@@ -36,6 +36,7 @@ public class FunctionToCenter {
 
     }
 
+
     // Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 320;
