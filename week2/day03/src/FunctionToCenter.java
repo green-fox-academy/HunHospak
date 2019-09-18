@@ -10,11 +10,30 @@ public class FunctionToCenter {
         // The x and y coordinates of the line's starting point and the graphics
         // and draws a line from that point to the center of the canvas.
         // Fill the canvas with lines from the edges, every 20 px, to the center.
-
+        int x=0;
+        int y=0;
+        Vonalak(x,y,graphics);
 
     }
     public static void Vonalak (int x, int y, Graphics graphics) {
-        
+        graphics.setColor(Color.BLACK);
+        for (int i = 0; i < 80 ; i++) {
+            if (x<321 && y<321 && x>=0) {
+                graphics.drawLine(x, y, 160, 160);
+                x+=20;
+            } else if (y<321 && x>321) {
+                graphics.drawLine(x,y,160,160);
+                y+=20;
+            } else if (y>320 && x<341 && x>=-30) {
+                graphics.drawLine(x,y,160,160);
+                x-=20;
+            } else if (y>=-20){
+                graphics.drawLine(x,y,160,160);
+                y-=20;
+
+            }
+        }
+
     }
 
     // Don't touch the code below
