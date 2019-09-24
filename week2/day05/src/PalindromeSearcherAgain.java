@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class PalindromeSearcherAgain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Searcher("hello");
+        Searcher("dog god good");
         
     }
 
