@@ -9,7 +9,7 @@ public class Dominoes {
         // You have the list of Dominoes
         // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
         // eg: [2, 4], [4, 3], [3, 5] ...
-        Domino a = new Domino(0,0);
+        Domino a;
         for (int i = 0; i < dominoes.size()-1 ; i++) {
             if (dominoes.get(i).getRightSide() != dominoes.get(i+1).getLeftSide()) {
                 for (int j = i; j >= 0 ; j--) {

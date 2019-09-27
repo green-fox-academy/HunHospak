@@ -2,9 +2,11 @@ package pirates;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Ship {
     List<Pirate> pirates = new ArrayList<>();
+    Random random = new Random();
     int numberOfAlive = 0;
     public Ship() {
     }
@@ -34,8 +36,8 @@ public class Ship {
 
     }
     public void party() {
-        for (int i = 0; i < (int)(Math.random()*this.pirates.size()*2) ; i++) {
-            this.pirates.get((int)(Math.random()*this.pirates.size())).drinkSomeRums();
+        for (int i = 0; i < (random.nextInt(this.pirates.size()*2)) ; i++) {
+            this.pirates.get(random.nextInt(this.pirates.size())).drinkSomeRums();
         }
     }
 
