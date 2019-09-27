@@ -7,6 +7,8 @@ public class CommonDivisor {
     }
 
     public static int Divisor (int a, int b) {
+        a = Math.abs(a);
+        b = Math.abs(b);
         if (Math.max(a,b)%Math.min(a,b)==0) {
             return Math.min(a,b);
         } else {
