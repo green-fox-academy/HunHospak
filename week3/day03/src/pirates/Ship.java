@@ -8,17 +8,19 @@ public class Ship {
     List<Pirate> pirates = new ArrayList<>();
     Random random = new Random();
     int numberOfAlive = 0;
+
     public Ship() {
     }
+
     public void fillShip() {
-        for (int i = 0; i < 1+(int)(Math.random()*50) ; i++) {
+        for (int i = 0; i < 1 + (int) (Math.random() * 50); i++) {
             this.pirates.add(new Pirate());
         }
     }
 
     public boolean battle(Ship second) {
-    //    System.out.println("\n" + "A battle has commenced: " + "\n");
-        if (this.numberOfAlive-pirates.get(0).drinking > second.numberOfAlive-second.pirates.get(0).drinking) {
+        //    System.out.println("\n" + "A battle has commenced: " + "\n");
+        if (this.numberOfAlive - pirates.get(0).drinking > second.numberOfAlive - second.pirates.get(0).drinking) {
             this.party();
             second.loser();
             return true;
@@ -30,13 +32,13 @@ public class Ship {
     }
 
     public void loser() {
-        for (int i = 0; i < (int)(Math.random()*this.pirates.size()) ; i++) {
+        for (int i = 0; i < (int) (Math.random() * this.pirates.size()); i++) {
             this.pirates.get(i).die();
         }
-
     }
+
     public void party() {
-        for (int i = 0; i < (random.nextInt(this.pirates.size()*2)) ; i++) {
+        for (int i = 0; i < (random.nextInt(this.pirates.size() * 2)); i++) {
             this.pirates.get(random.nextInt(this.pirates.size())).drinkSomeRums();
         }
     }
@@ -59,6 +61,5 @@ public class Ship {
         }
         System.out.println("The number of live members is: " + (this.numberOfAlive - 1));
     }
-
 }
 

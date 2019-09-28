@@ -41,7 +41,7 @@ public class DiceSet {
         int szamlalo = 0;
         DiceSet diceSet = new DiceSet();
         diceSet.roll();
-        for (int i = 0; i < 6 ; i++) {
+        for (int i = 0; i < 6; i++) {
             while (diceSet.getCurrent(i) != 6) {
                 diceSet.reroll(i);
                 szamlalo++;
@@ -49,13 +49,5 @@ public class DiceSet {
             System.out.println(diceSet.getCurrent(i));
         }
         System.out.println(szamlalo);
-        /*System.out.println(diceSet.getCurrent());
-        System.out.println(diceSet.roll());
-        System.out.println(diceSet.getCurrent());
-        System.out.println(diceSet.getCurrent(2));
-        diceSet.reroll();
-        System.out.println(diceSet.getCurrent());
-        diceSet.reroll(3);
-        System.out.println(diceSet.getCurrent());*/
     }
 }

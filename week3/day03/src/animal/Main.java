@@ -2,8 +2,8 @@ package animal;
 
 public class Main {
     public static void main(String[] args) {
-    Animal csacsi = new Animal();
-    csacsi.Drink();
-        System.out.println(csacsi.thirst);
+        Animal donkey = new Animal();
+        donkey.Drink();
+        System.out.println(donkey.thirst);
     }
 }

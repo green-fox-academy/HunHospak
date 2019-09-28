@@ -10,22 +10,18 @@ public class Dominoes {
         // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
         // eg: [2, 4], [4, 3], [3, 5] ...
         Domino a;
-        for (int i = 0; i < dominoes.size()-1 ; i++) {
-            if (dominoes.get(i).getRightSide() != dominoes.get(i+1).getLeftSide()) {
-                for (int j = i; j >= 0 ; j--) {
+        for (int i = 0; i < dominoes.size() - 1; i++) {
+            if (dominoes.get(i).getRightSide() != dominoes.get(i + 1).getLeftSide()) {
+                for (int j = i; j >= 0; j--) {
                     if (dominoes.get(i).getRightSide() == dominoes.get(j).getLeftSide()) {
-                        a = dominoes.get(i+1);
-                        dominoes.set(i+1,dominoes.get(j));
-                        dominoes.set(j,a);
+                        a = dominoes.get(i + 1);
+                        dominoes.set(i + 1, dominoes.get(j));
+                        dominoes.set(j, a);
                     }
                 }
             }
         }
-
-
-
         System.out.println(dominoes);
-
     }
 
     static List<Domino> initializeDominoes() {

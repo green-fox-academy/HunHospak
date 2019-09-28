@@ -1,4 +1,5 @@
 package pokemon;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,13 +9,13 @@ public class Main {
 
         // Every pokemon has a name and a type.
         // Certain types are effective against others, e.g. water is effective against fire.
-
         // Ash has a few pokemon.
         // A wild pokemon appeared!
 
         Pokemon wildPokemon = new Pokemon("Oddish", "leaf", "water");
-        for (int i = 0; i < pokemonOfAsh.size() ; i++) {
-            if (pokemonOfAsh.get(i).isEffectiveAgainst(wildPokemon)) System.out.println("I choose you, " + pokemonOfAsh.get(i).name);
+        for (int i = 0; i < pokemonOfAsh.size(); i++) {
+            if (pokemonOfAsh.get(i).isEffectiveAgainst(wildPokemon))
+                System.out.println("I choose you, " + pokemonOfAsh.get(i).name);
         }
         // Which pokemon should Ash use?
     }

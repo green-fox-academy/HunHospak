@@ -2,7 +2,7 @@ package counter;
 
 public class Main {
     public static void main(String[] args) {
-        Counter counter = new Counter ();
+        Counter counter = new Counter();
         counter.add(5);
         counter.get();
         counter.reset();
@@ -13,8 +13,5 @@ public class Main {
         counter2.get();
         counter2.reset();
         counter2.get();
-
-
-
     }
 }

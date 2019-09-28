@@ -8,18 +8,18 @@ public class SharpieSet {
 
     public void CountUsable() {
         int counter = 0;
-        for (int i = 0; i < sharpies.size() ; i++) {
+        for (int i = 0; i < sharpies.size(); i++) {
             if (sharpies.get(i).inkAmount > 0) {
                 counter++;
             }
         }
     }
-    public void RemoveTrash () {
-        for (int i = 0; i < sharpies.size() ; i++) {
+
+    public void RemoveTrash() {
+        for (int i = 0; i < sharpies.size(); i++) {
             if (sharpies.get(i).inkAmount == 0) {
                 sharpies.remove(i);
             }
-
         }
     }
 }
