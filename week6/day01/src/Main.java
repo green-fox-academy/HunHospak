@@ -1,6 +1,7 @@
 import static java.util.stream.Collectors.toMap;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.IntSummaryStatistics;
@@ -42,7 +43,6 @@ public class Main {
         .summaryStatistics();
     System.out.println(sumOfOdds.getSum());
 
-
     String lista = "moamAMSDmasmfsdmfsklnfaASdan";
     List<Character> findUppercases = lista.codePoints()
         .mapToObj(c -> (char) c)
@@ -50,15 +50,17 @@ public class Main {
         .collect(Collectors.toList());
     System.out.println(findUppercases);
 
-    List<String> cities = Arrays.asList("ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS");
+    List<String> cities = Arrays
+        .asList("ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM",
+            "ABU DHABI", "PARIS");
     List<String> startsWith = cities.stream()
         .filter(city -> city.startsWith("C"))
         .collect(Collectors.toList());
     System.out.println(startsWith);
 
-    List<Character> myCharacters = Arrays.asList('c' , 'y' , 'a', 'm', 'a', 't', 'e');
+    List<Character> myCharacters = Arrays.asList('c', 'y', 'a', 'm', 'a', 't', 'e');
     String hello = "hi mate ";
-    String together = myCharacters.stream().map(String :: valueOf).collect(Collectors.joining());
+    String together = myCharacters.stream().map(String::valueOf).collect(Collectors.joining());
     System.out.println(together);
 
     String hello2 = "ehaklmkldafklmdfl";
@@ -68,5 +70,37 @@ public class Main {
             v -> 1,
             Integer::sum));
     System.out.println("Frequencies:\n" + frequencies);
+
+    List<Fox> foxes = new ArrayList<>();
+    Fox fox1 = new Fox("Feri", "Green", 4);
+    Fox fox2 = new Fox("Sanyi", "Red", 3);
+    Fox fox3 = new Fox("Csaba", "Orange", 6);
+    Fox fox4 = new Fox("Vuk", "Green", 2);
+    Fox fox5 = new Fox("László", "Grey", 8);
+
+    foxes.add(fox1);
+    foxes.add(fox2);
+    foxes.add(fox3);
+    foxes.add(fox4);
+    foxes.add(fox5);
+
+    List<Fox> greenFoxes = foxes.stream()
+        .filter(fox -> fox.getColor().equals("Green"))
+        .collect(Collectors.toList());
+    System.out.println(greenFoxes);
+
+    List<Fox> ageAndColor = foxes.stream()
+        .filter(fox -> fox.getAge() < 5)
+        .filter(fox -> fox.getColor().equals("Green")).collect(Collectors.toList());
+    System.out.println(ageAndColor);
+
+    Map<String, Integer> colorFreq = foxes.stream()
+        .collect(toMap(
+            Fox::getColor,
+            v -> 1,
+            Integer::sum));
+    System.out.println(colorFreq);
   }
+
+
 }
