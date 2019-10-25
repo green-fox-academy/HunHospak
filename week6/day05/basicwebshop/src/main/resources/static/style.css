@@ -1,0 +1,80 @@
+body {
+  padding: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  width: 1100px;
+  font-family: Arial, sans-serif;
+}
+
+form {
+ margin-top: 30px;
+}
+
+label {
+  color: orangered;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#search {
+  height: 40px;
+  width: 900px;
+  padding: 5px;
+  font-size: 18px;
+  border-radius: 10px;
+  border-color: orangered;
+
+}
+
+#submit {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 25px;
+  height: 50px;
+  width: 150px;
+  border-radius: 20px;
+  background-color: orangered;
+  color: aliceblue;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 20px 0px;
+  padding: 10px 0px;
+  color: deepskyblue;
+  border-bottom: 2px solid deepskyblue;
+}
+
+a {
+  margin-bottom: 30px;
+  font-size: 21px;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: orangered;
+  text-decoration: none;
+}
+
+table {
+  width: 1100px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+tr.head {
+  font-weight: bold;
+  font-size: 30px;
+  height: 70px;
+  background-color: deepskyblue;
+  padding: 20px;
+}
+
+td.body1 {
+  font-size: 25px;
+  height: 70px;
+}
+
+td.body2 {
+  font-size: 35px;
+  height: 70px;
+}
