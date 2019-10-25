@@ -1,0 +1,33 @@
+body {
+    height: 600px;
+    width: 600px;
+    border: solid black;
+    padding: 50px;
+}
+
+input {
+    display: flex;
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+#inputs {
+    float: left;
+    clear: left;
+}
+a {
+    padding-right: 30px;
+    display: block;
+    margin: 22px;
+    float: right;
+    clear: right;
+}
+
+#or {
+    position: absolute;
+    top: 200px;
+    left: 325px;
+    
+}
+
+

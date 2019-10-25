@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="loginstyle.css">
+        <title>Account login</title>
+    </head>
+    <body>
+        <div id = feher>
+            <form>
+                <h1>ACCOUNT LOGIN</h1>
+                <div class="">
+                    <label for="username">USERNAME:</label>
+                    <input type="text" placeholder="Username" name="username" id="username" autofocus>
+                    <label for="password">PASSWORD:</label>
+                    <input type="password" placeholder="Password" name="password" id="myInput">
+                </div>
+                <input type="checkbox" id="eye" onclick="myFunction()">
+                <a href="https:\\www.github.com">Forgot password?</a>
+                <button>Submit</button>
+            </form>
+
+            <script>
+                function myFunction() {
+                var x = document.getElementById("myInput");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+                }
+            </script>
+        </div>
+
+    </body>
+</html>
