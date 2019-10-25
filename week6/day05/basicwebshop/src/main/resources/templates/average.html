@@ -15,27 +15,20 @@
   <a href="http://localhost:8080/webshop/most-expensive">MOST EXPENSIVE AVAIABLE</a>
 </div>
 <div>
-  <form action="/webshop/search" method="post">
+  <form action="/search">
     <label for="search">Search for...</label> <br>
-    <input type="text" name="look" id="search" placeholder="Type here...">
+    <input type="text" name="search" id="search" placeholder="Type here...">
     <input type="submit" value="Search" id="submit">
   </form>
 </div>
 <table>
-    <tr class="head">
-      <td>Name</td>
-      <td>Description</td>
-      <td>Price</td>
-      <td>Quantity of Stock</td>
-    </tr>
-  <div class="body">
-    <tr th:each="item : ${items}">
-      <td class="body1" th:text="${item.getName()}"></td>
-      <td class="body1" th:text="${item.getDescription()}"></td>
-      <td class="body2" th:text="${item.getPrice()} + ' Ł'"></td>
-      <td class="body2" th:text="${item.getQuantityStock()}"></td>
-    </tr>
-  </div>
+  <tr class="head">
+    <td>Name</td>
+    <td>Description</td>
+    <td>Price</td>
+    <td>Quantity of Stock</td>
+  </tr>
 </table>
+<h2 th:text="'Average stock: ' + ${items}"></h2>
 </body>
 </html>

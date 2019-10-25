@@ -8,6 +8,8 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class WebshopController {
@@ -32,9 +34,9 @@ public class WebshopController {
   public String webShopAvaiable(Model model) {
     model.addAttribute("items",
         items.stream()
-            .filter(item -> item.getQuantityStock()>0)
+            .filter(item -> item.getQuantityStock() > 0)
             .collect(
-        Collectors.toList()));
+                Collectors.toList()));
     return "webshop";
   }
 
@@ -44,6 +46,43 @@ public class WebshopController {
         items.stream()
             .sorted(Comparator.comparing(ShopItem::getPrice))
             .collect(Collectors.toList()));
+    return "webshop";
+  }
+
+  @GetMapping(value = "/webshop/contains-nike")
+  public String webShopNike(Model model) {
+    model.addAttribute("items",
+        items.stream()
+            .filter(item -> item.getDescription().toLowerCase().contains("nike"))
+            .collect(Collectors.toList()));
+    return "webshop";
+  }
+
+  @GetMapping(value = "/webshop/average-stock")
+  public String webShopAverage(Model model) {
+    model.addAttribute("items",
+        items.stream()
+            .mapToDouble(ShopItem::getQuantityStock)
+            .average()
+            .getAsDouble());
+    return "average";
+  }
+
+  @GetMapping(value = "/webshop/most-expensive")
+  public String webShopExpensive(Model model) {
+    model.addAttribute("items",
+        items.stream()
+            .mapToDouble(ShopItem::getPrice)
+            .max()
+            .getAsDouble());
+    return "mostExpensive";
+  }
+
+  @PostMapping(value = "/webshop/search")
+  public String webShopSearch(@RequestParam String look, Model model) {
+    model.addAttribute("items", items.stream()
+        .filter(item -> item.getName().toLowerCase().contains(look))
+        .collect(Collectors.toList()));
     return "webshop";
   }
 

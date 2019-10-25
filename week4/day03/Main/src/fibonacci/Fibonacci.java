@@ -26,5 +26,5 @@ class Fibonacci {
       }
       return fiboContain;
     }
-    }
   }
+}
