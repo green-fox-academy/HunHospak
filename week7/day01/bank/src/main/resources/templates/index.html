@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Bank Accounts</title>
+  <meta charset="utf-8"/>
+</head>
+<body>
+<td>
+  <table>
+    <tr>
+      <th>Index</th>
+      <th>Name</th>
+      <th>Balance</th>
+      <th>Animal Type</th>
+      <th>King</th>
+      <th>Bad or Good</th>
+    </tr>
+    <tr th:each="animal : ${animalList}" th:style="${animal.isKing() ? 'background-color:yellow':'background-color:grey'}">
+      <td th:utext="${animalStat.count}"></td>
+      <td th:utext="${animal.getName()}"></td>
+      <td th:utext="${animal.getBalance()}"></td>
+      <td th:utext="${animal.getAnimalType()}"></td>
+      <td th:utext="${animal.isKing()}"></td>
+      <th:block th:switch="${animal.isBad()}">
+        <td th:case="true">Bad guy</td>
+        <td th:case="false">Good guy</td>
+      </th:block>
+    </tr>
+  </table>
+  <form th:action="@{/add}" th:object="${animalList}" th:method="addPlusMoney">
+    <button>Submit</button>
+  </form>
+</div>
+</body>
+</html>
