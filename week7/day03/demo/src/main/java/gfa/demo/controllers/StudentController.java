@@ -24,12 +24,12 @@ public class StudentController {
     return "list";
   }
 
-  @PostMapping(value = "gfa/add")
+  @GetMapping(value = "/gfa/add")
   public String addPage () {
     return "add";
   }
 
-  @GetMapping(value = "gfa/save")
+  @PostMapping(value = "/gfa/save")
   public String saveStudent (@RequestParam String name) {
     studentService.save(name);
     return "redirect:/gfa";

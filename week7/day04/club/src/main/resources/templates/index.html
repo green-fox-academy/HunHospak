@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Fox Club</title>
+</head>
+<body>
+<li><a th:href="@{/information/}">Information</a></li>
+<img th:src="@{/greenfox.png}" /> <br>
+<li><a th:href="@{/login/}">Login</a></li>
+<p th:text="|This is ${name}. Currently living on ${food} and ${drink}.|"></p>
+
+</body>
+</html>
