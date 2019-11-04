@@ -6,9 +6,10 @@
 </head>
 <body>
 <li><a th:href="@{/information/}">Information</a></li>
+<li><a th:href="@{/nutritionStore/}">Nutrition Store</a></li>
 <img th:src="@{/greenfox.png}" /> <br>
 <li><a th:href="@{/login/}">Login</a></li>
-<p th:text="|This is ${name}. Currently living on  and .|"></p>
+<p th:text="|This is ${name}. Currently living on *{food} and *{drink} .|"></p>
 
 </body>
 </html>

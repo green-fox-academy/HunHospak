@@ -24,6 +24,8 @@ public class MainController {
   public String mainPage (Model model, @RequestParam(required = false) String name) {
    if (service.hasName(name)) {
      model.addAttribute("name", name);
+     model.addAttribute("food", service.getServFood(name));
+     model.addAttribute("drink", service.getServDrink(name));
      return "index";
    } else {
      model.addAttribute("fox", new Fox());
@@ -41,6 +43,12 @@ public class MainController {
   public String loginGetPage (@ModelAttribute Fox fox) {
     service.add(fox);
     return "redirect:/?name="+fox.getPetName();
+  }
+
+  @GetMapping(value = "/nutritionstore")
+  public String nutritionPage (Model model) {
+    model.addAttribute("foodlist", service.());
+    return "nutritionStore";
   }
 
 }

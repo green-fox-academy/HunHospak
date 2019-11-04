@@ -11,18 +11,15 @@ public class Fox {
   public Fox() {
   }
 
-  public Fox(String petName) {
-    this.petName = petName;
-  }
-
-  public Fox(String petNames, String food, String drink) {
+  public Fox(String petNames) {
     this.petName = petNames;
-    this.food = food;
-    this.drink = drink;
+    this.food = "pizza";
+    this.drink = "cola";
   }
 
 
   public String getFood() {
+    this.food="pizza";
     return food;
   }
 
@@ -31,6 +28,7 @@ public class Fox {
   }
 
   public String getDrink() {
+    this.drink="cola";
     return drink;
   }
 

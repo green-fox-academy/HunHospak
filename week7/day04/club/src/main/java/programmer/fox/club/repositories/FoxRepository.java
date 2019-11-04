@@ -10,10 +10,12 @@ public class FoxRepository {
   private List<Fox> foxes = new ArrayList<>();
 
   public FoxRepository() {
-    foxes.add(new Fox("Roka", "pizza", "kola"));
-    foxes.add(new Fox("Feri", "pizza", "kola"));
-    foxes.add(new Fox("Tamas", "pizza", "kola"));
+    foxes.add(new Fox("Roka"));
+    foxes.add(new Fox("Feri"));
+    foxes.add(new Fox("Tamas"));
   }
+
+
 
   public List<Fox> getFoxes() {
     return foxes;

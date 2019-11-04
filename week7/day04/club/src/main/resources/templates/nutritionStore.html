@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Nutrition Store:</title>
+</head>
+<body>
+<form th:action="@{/nutritionStore}" method="post">
+  <label>Raise the balance of a selected animal:</label>
+  <select name="animalIndex">
+    <option th:each="account : ${animalList}" th:text="${account.getName()}"
+            th:value="${accountStat.index}"></option>
+  </select>
+  <input type="submit" value="Raise Balance">
+</form>
+</body>
+</html>
