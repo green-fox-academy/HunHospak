@@ -1,32 +1,26 @@
 package programmer.fox.club.models;
 
-import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
 public class Fox {
   private String petName;
-  private List<String> tricks;
-  private String food = "pizza";
-  private String drink = "lemonade";
+  private String food;
+  private String drink;
 
   public Fox() {
   }
 
-  public Fox(String petNames, List<String> tricks, String food, String drink) {
+  public Fox(String petName) {
+    this.petName = petName;
+  }
+
+  public Fox(String petNames, String food, String drink) {
     this.petName = petNames;
-    this.tricks = tricks;
     this.food = food;
     this.drink = drink;
   }
 
-  public List<String> getTricks() {
-    return tricks;
-  }
-
-  public void setTricks(List<String> tricks) {
-    this.tricks = tricks;
-  }
 
   public String getFood() {
     return food;

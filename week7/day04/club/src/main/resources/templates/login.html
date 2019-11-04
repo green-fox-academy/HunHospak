@@ -7,8 +7,8 @@
 <body>
 <h1>Welcome to Programmer Fox Club!</h1>
 <p>Please provide a name, so you can associate it to your pet!</p>
-<form method="post" th:action="@{/login}">
-  <input type="text" name="name">
+<form method="post" th:action="@{/login}" th:object="${fox}">
+  <input type="text" th:field="*{petName}"><br>
   <button type="submit">Submit</button>
 </form>
 
