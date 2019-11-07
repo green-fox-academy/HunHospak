@@ -3,6 +3,7 @@ package com.reddit.post.services;
 import com.reddit.post.models.Post;
 import com.reddit.post.repositories.PostRepository;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,6 +43,14 @@ public class RedditServices implements RedditIntService{
   @Override
   public List<Post> findAllByTitle(String title) {
     return repo.findAllByTitle(title);
+  }
+
+  @Override
+  public List<Post> findAllByUpvote() {
+    List<Post> top = new ArrayList<>();
+    repo.findAll().forEach(top::add);
+    top.sort(Comparator.comparing(Post::getVotes).reversed());
+    return top;
   }
 
   @Override

@@ -15,6 +15,7 @@
       <td><a th:href="@{'/downvote/' + ${post.id}}">-</a></td>
     </form>
     <td><a th:href="${post.getUrl()}" th:text="${post.getTitle()}" target="_blank"></a></td>
+    <td th:text="${post.getCreatedAt()}"></td>
   </tr>
 </table>
 

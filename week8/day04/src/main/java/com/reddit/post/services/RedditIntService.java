@@ -9,6 +9,7 @@ public interface RedditIntService {
   void save(Post post);
   void delete(Long id);
   List<Post> findAllByTitle(String title);
+  List<Post> findAllByUpvote();
   Post upvote(Long id);
   Post downvote(Long id);
 }
