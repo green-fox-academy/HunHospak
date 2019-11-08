@@ -15,18 +15,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class RedditController {
 
   private RedditServices services;
-  private int page;
 
   @Autowired
   public RedditController(RedditServices services) {
 
     this.services = services;
-    this.page = 0;
   }
 
   @GetMapping(value = {"/","/{page}"})
   public String mainPage(Model model, @PathVariable(name = "page", required = false) Integer page ) {
-    if (page==null) {
+    if (page==null || page==0) {
       page=0;
     }
     model.addAttribute("posts",services.findAllByUpvote()
@@ -34,9 +32,11 @@ public class RedditController {
         .skip(page*10)
         .limit(10)
         .collect(Collectors.toList()));
-    model.addAttribute("next", page+=1);
-    if (page>0) {
-      model.addAttribute("previous", page -= 1);
+    model.addAttribute("next", page + 1);
+    if (page>1) {
+      model.addAttribute("previous", page - 1);
+    } else {
+      model.addAttribute("previous", page = 0);
     }
     return "index";
   }

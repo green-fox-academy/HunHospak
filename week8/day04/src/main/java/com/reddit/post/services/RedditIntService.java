@@ -10,6 +10,6 @@ public interface RedditIntService {
   void delete(Long id);
   List<Post> findAllByTitle(String title);
   List<Post> findAllByUpvote();
-  Post upvote(Long id);
-  Post downvote(Long id);
+  void upvote(Long id);
+  void downvote(Long id);
 }

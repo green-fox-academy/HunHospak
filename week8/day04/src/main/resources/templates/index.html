@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head >
+  <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
   <meta charset="UTF-8">
   <title>Reddit</title>
 </head>
 <body>
-<a th:href="@{/add}">Submit a new post.</a>
-<h1>Trending posts</h1>
-<table>
+<a class="alert alert-primary" th:href="@{/add}">Submit a new post.</a>
+<h1 class="navbar navbar-light bg-light">Trending posts</h1>
+<table class="table">
   <tr th:each="post : ${posts}">
-    <td th:text="${post.getVotes()}"></td>
+    <td class="text-center" th:text="${post.getVotes()}"></td>
     <form>
-      <td><a th:href="@{'/upvote/' + ${post.id}}">+</a></td>
-      <td><a th:href="@{'/downvote/' + ${post.id}}">-</a></td>
+      <td><a th:href="@{'/upvote/' + ${post.id}}"><img width="20px" height="20px" src="images\positive-vote.svg"></a></td>
+      <td><a th:href="@{'/downvote/' + ${post.id}}"><img width="20px" height="20px" src="images\negative-vote.svg"></a></td>
     </form>
     <td><a th:href="${post.getUrl()}" th:text="${post.getTitle()}" target="_blank"></a></td>
     <td th:text="${post.getDate()}"></td>
   </tr>
 </table>
 
-<button type="submit"><a th:href="@{'/' + ${previous}}" th:name="page" style="text-decoration: none">Previous page</a></button>
-<button type="submit"><a th:href="@{'/' + ${next}}" th:name="page" style="text-decoration: none">Next page</a></button>
+<button type="submit" class="button"><a th:href="@{'/' + ${previous}}" th:name="previous" style="text-decoration: none">Previous page</a></button>
+<button type="submit" class="button"><a th:href="@{'/' + ${next}}" th:name="next" style="text-decoration: none">Next page</a></button>
 
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
 </body>
 </html>

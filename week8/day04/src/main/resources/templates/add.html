@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Add a new Post</title>
+  <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
 <form th:action="@{/add}" method="post" th:object="${post}">
@@ -27,6 +28,7 @@
 
   <button type="submit">Save</button>
 </form>
-
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
 </body>
 </html>

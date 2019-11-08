@@ -54,19 +54,18 @@ public class RedditServices implements RedditIntService{
   }
 
   @Override
-  public Post upvote(Long id) {
+  public void upvote(Long id) {
     Post upvoted = repo.findById(id).orElse(null);
     upvoted.setVotes(upvoted.getVotes()+1);
     repo.save(upvoted);
-    return upvoted;
   }
 
   @Override
-  public Post downvote(Long id) {
+  public void downvote(Long id) {
     Post upvoted = repo.findById(id).orElse(null);
     upvoted.setVotes(upvoted.getVotes()-1);
     repo.save(upvoted);
-    return upvoted;
+
   }
 
 }
