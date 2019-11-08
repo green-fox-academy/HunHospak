@@ -2,6 +2,7 @@ package com.reddit.post.controllers;
 
 import com.reddit.post.models.Post;
 import com.reddit.post.services.RedditServices;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,15 +15,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class RedditController {
 
   private RedditServices services;
+  private int page;
 
   @Autowired
   public RedditController(RedditServices services) {
+
     this.services = services;
+    this.page = 0;
   }
 
-  @GetMapping(value = "/")
-  public String mainPage(Model model) {
-    model.addAttribute("posts",services.findAllByUpvote());
+  @GetMapping(value = {"/","/{page}"})
+  public String mainPage(Model model, @PathVariable(name = "page", required = false) Integer page ) {
+    if (page==null) {
+      page=0;
+    }
+    model.addAttribute("posts",services.findAllByUpvote()
+        .stream()
+        .skip(page*10)
+        .limit(10)
+        .collect(Collectors.toList()));
+    model.addAttribute("next", page+=1);
+    if (page>0) {
+      model.addAttribute("previous", page -= 1);
+    }
     return "index";
   }
 

@@ -15,9 +15,12 @@
       <td><a th:href="@{'/downvote/' + ${post.id}}">-</a></td>
     </form>
     <td><a th:href="${post.getUrl()}" th:text="${post.getTitle()}" target="_blank"></a></td>
-    <td th:text="${post.getCreatedAt()}"></td>
+    <td th:text="${post.getDate()}"></td>
   </tr>
 </table>
+
+<button type="submit"><a th:href="@{'/' + ${previous}}" th:name="page" style="text-decoration: none">Previous page</a></button>
+<button type="submit"><a th:href="@{'/' + ${next}}" th:name="page" style="text-decoration: none">Next page</a></button>
 
 </body>
 </html>
