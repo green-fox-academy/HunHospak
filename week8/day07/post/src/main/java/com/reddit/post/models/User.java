@@ -17,9 +17,11 @@ import lombok.Setter;
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  Long id;
-  String name;
-  String password;
+  private Long id;
+  private String name;
+  private String password;
+  private boolean enabled = true;
+  private String authority = "USER";
 
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
   private List<Post> posts;
