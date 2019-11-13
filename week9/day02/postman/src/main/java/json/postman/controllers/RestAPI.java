@@ -12,6 +12,8 @@ import json.postman.models.Greet;
 import json.postman.models.Log;
 import json.postman.models.LogOutPut;
 import json.postman.models.Sith;
+import json.postman.models.SithConverter;
+import json.postman.models.SithOut;
 import json.postman.models.UntilResponse;
 import json.postman.services.LogService;
 import json.postman.services.MainService;
@@ -30,6 +32,9 @@ public class RestAPI {
 
   @Autowired
   MainService service;
+
+  @Autowired
+  SithConverter converter;
 
   @Autowired
   LogService logs;
@@ -107,7 +112,7 @@ public class RestAPI {
   }
 
   @PostMapping("/sith")
-  public ResponseEntity<Object> sithReverser(@RequestBody Sith text) {
-
+  public ResponseEntity<SithOut> sithReverser(@RequestBody Sith text) {
+    return ResponseEntity.status(HttpStatus.OK).body(new SithOut(converter.convert(text.getText())));
   }
 }

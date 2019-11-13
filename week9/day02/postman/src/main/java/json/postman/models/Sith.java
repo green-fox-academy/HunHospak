@@ -7,6 +7,9 @@ public class Sith {
     this.text = text;
   }
 
+  public Sith() {
+  }
+
   public String getText() {
     return text;
   }
